@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Najim & Elena | Our Love Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ffafbd;
+            --secondary-purple: #c9ffbf; /* Soft gradient feel */
+            --text-color: #5d4157;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: var(--text-color);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Heart Animation */
+        .heart {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Hero Section */
+        .container {
+            max-width: 800px;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        /* Connection Cards */
+        .connection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 40px 0;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .country-box {
+            flex: 1;
+        }
+
+        .country-name {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .heart-icon {
+            font-size: 3rem;
+            color: #ff4b2b;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Quotes section */
+        .quotes {
+            font-style: italic;
+            margin: 50px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 5px solid #fff;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .connection { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <p class="subtitle">Our Love Story</p>
+            <h1>Najim & Elena</h1>
+        </header>
+
+        <section class="connection">
+            <div class="country-box">
+                <div class="country-name">🇧🇩 Bangladesh</div>
+                <p>Najim</p>
+            </div>
+            
+            <div class="heart-icon">❤️</div>
+            
+            <div class="country-box">
+                <div class="country-name">🇲🇲 Myanmar</div>
+                <p>Elena</p>
+            </div>
+        </section>
+
+        <section class="quotes">
+            <p>"I fall in love with you more and more every day."</p>
+            <p><strong>You are my present, and my future.</strong></p>
+        </section>
+
+        <div style="background: white; padding: 20px; border-radius: 20px; color: #ff758c;">
+            <h3>You're my everything.</h3>
+            <p>Distance is just a test to see how far love can travel.</p>
+        </div>
+
+        <footer>
+            Created with love for Najim & Elena
+        </footer>
+    </div>
+
+    <script>
+        // Create falling hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
